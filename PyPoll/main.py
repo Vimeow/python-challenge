@@ -57,10 +57,10 @@ for j in range(total_candidates):
     vote_count.append(count)
 
 # The winner of the election based on popular vote
-
 for i in range(total_candidates-1):
     if vote_count[i+1] > vote_count[i]:
-        winner = vote_count[i+1]
+        winner_count = vote_count[i+1]
+winner = candidate_list[vote_count.index(winner_count)]
 
 # Print the analysis to terminal
 print("Election Results")
@@ -76,7 +76,7 @@ candidate_summary_lines = "\n".join(candidate_summary)
 
 print(candidate_summary_lines)
 print("-------------------------")
-print(f"Winner: {candidate_list[vote_count.index(winner)]}")
+print(f"Winner: {winner}")
 print("-------------------------")
 
 # Export the results to a text file:
@@ -89,5 +89,5 @@ Total Votes: {total_votes}\n\
 -------------------------\n\
 {candidate_summary_lines}\n\
 -------------------------\n\
-Winner: {candidate_list[vote_count.index(winner)]}\n\
+Winner: {winner}\n\
 -------------------------")
